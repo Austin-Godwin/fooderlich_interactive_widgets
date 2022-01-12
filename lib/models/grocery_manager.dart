@@ -10,4 +10,20 @@ class GroceryManager extends ChangeNotifier {
     _groceryItems.removeAt(index);
     notifyListeners();
   }
+
+  void addItem(GroceryItem item) {
+    _groceryItems.add(item);
+    notifyListeners();
+  }
+
+  void updateItem(GroceryItem item, int index) {
+    _groceryItems[index] = item;
+    notifyListeners();
+  }
+
+  void completeItem(int index, bool change) {
+    final item = _groceryItems[index];
+    _groceryItems[index] = item.copyWith(isComplete: change);
+    notifyListeners();
+  }
 }
