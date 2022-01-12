@@ -3,6 +3,8 @@ import 'screens/grocery_screen.dart';
 
 import 'screens/explore_screen.dart';
 import 'screens/recipes_screen.dart';
+import 'package:provider/provider.dart';
+import 'models/models.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
