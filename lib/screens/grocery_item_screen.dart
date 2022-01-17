@@ -53,6 +53,12 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
   }
 
   @override
+  void dispose() {
+    _nameController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.orange,
