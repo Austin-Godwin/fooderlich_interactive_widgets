@@ -80,10 +80,38 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-
+            buildNameField(),
           ],
         ),
       ),
+    );
+  }
+
+  Widget buildNameField() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Item Name',
+          style: GoogleFonts.lato(fontSize: 28.0),
+        ),
+        TextField(
+          controller: _nameController,
+          cursorColor: _currentColor,
+          decoration: InputDecoration(
+            hintText: 'E.g. Apples, Banana, 1 Bag of salt',
+            enabledBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: _currentColor),
+            ),
+            border: UnderlineInputBorder(
+              borderSide: BorderSide(color: _currentColor),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
