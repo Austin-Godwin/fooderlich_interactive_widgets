@@ -77,12 +77,12 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         ),
       ),
       body: Container(
-        // padding: const EdgeInsets.all(16.0),
-        // child: ListView(
-        //   children: [
-        //
-        //   ],
-        // ),
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(
+          children: [
+
+          ],
+        ),
       ),
     );
   }
