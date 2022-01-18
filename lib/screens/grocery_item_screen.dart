@@ -170,8 +170,13 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
 
+          ],
+        )
       ],
-    )
+    );
   }
 }
