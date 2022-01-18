@@ -81,6 +81,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         child: ListView(
           children: [
             buildNameField(),
+            buildImportantField(),
           ],
         ),
       ),
@@ -110,6 +111,56 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
               borderSide: BorderSide(color: _currentColor),
             ),
           ),
+        )
+      ],
+    );
+  }
+
+  Widget buildImportantField() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Importance',
+          style: GoogleFonts.lato(fontSize: 28.0),
+        ),
+        Wrap(
+          spacing: 10.0,
+          children: [
+            ChoiceChip(
+              selectedColor: Colors.black,
+              label: const Text(
+                'low',
+                style: TextStyle(color: Colors.white),
+              ),
+              selected: _importance == Importance.low,
+              onSelected: (selected) {
+                setState(() => _importance = Importance.low);
+              },
+            ),
+            ChoiceChip(
+              selectedColor: Colors.black,
+              label: const Text(
+                'medium',
+                style: TextStyle(color: Colors.white),
+              ),
+              selected: _importance == Importance.medium,
+              onSelected: (selected) {
+                setState(() => _importance = Importance.medium);
+              },
+            ),
+            ChoiceChip(
+              selectedColor: Colors.black,
+              label: const Text(
+                'high',
+                style: TextStyle(color: Colors.white),
+              ),
+              selected: _importance == Importance.high,
+              onSelected: (selected) {
+                setState(() => _importance = Importance.high);
+              },
+            )
+          ],
         )
       ],
     );
