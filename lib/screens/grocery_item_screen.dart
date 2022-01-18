@@ -82,6 +82,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
           children: [
             buildNameField(),
             buildImportantField(),
+            buildDateField(context),
           ],
         ),
       ),
@@ -173,9 +174,31 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            Text(
+              'Date',
+              style: GoogleFonts.lato(fontSize: 28.0),
+            ),
+            TextButton(
+              onPressed: () async {
+                final currentDate = DateTime.now();
 
+                final selectedDate = await showDatePicker(
+                  context: context,
+                  initialDate: currentDate,
+                  firstDate: currentDate,
+                  lastDate: DateTime(currentDate.year + 5),
+                );
+                setState(() {
+                  if (selectedDate != null) {
+                    _dueDate = selectedDate;
+                  }
+                });
+              },
+              child: const Text('Select'),
+            ),
           ],
-        )
+        ),
+        Text('${DateFormat('yyyy-MM-dd').format(_dueDate)}'),
       ],
     );
   }
