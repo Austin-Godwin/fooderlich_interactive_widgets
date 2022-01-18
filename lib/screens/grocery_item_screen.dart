@@ -165,4 +165,13 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
       ],
     );
   }
+
+  Widget buildDateField(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+
+      ],
+    )
+  }
 }
