@@ -84,7 +84,9 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             buildImportantField(),
             buildDateField(context),
             buildTimeField(context),
-            const SizedBox(height: 10.0,),
+            const SizedBox(
+              height: 10.0,
+            ),
             buildColorPicker(context),
           ],
         ),
@@ -295,7 +297,31 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
         Row(
           crossAxisAlignment: CrossAxisAlignment.baseline,
           textBaseline: TextBaseline.alphabetic,
-
+          children: [
+            Text(
+              'Quantity',
+              style: GoogleFonts.lato(fontSize: 28.0),
+            ),
+            const SizedBox(
+              width: 16.0,
+            ),
+            Text(
+              _currentSliderValue.toInt().toString(),
+              style: GoogleFonts.lato(
+                fontSize: 18.0,
+              ),
+            )
+          ],
+        ),
+        Slider(
+          value: _currentSliderValue.toDouble(),
+          onChanged: (double value) {
+            setState(
+              () {
+                _currentSliderValue = value.toInt();
+              },
+            );
+          },
         )
       ],
     );
