@@ -84,10 +84,10 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
             buildImportantField(),
             buildDateField(context),
             buildTimeField(context),
-            const SizedBox(
-              height: 10.0,
-            ),
+            const SizedBox(height: 10.0),
             buildColorPicker(context),
+            const SizedBox(height: 10.0),
+            buildQuantityField(),
           ],
         ),
       ),
