@@ -287,4 +287,17 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
       ],
     );
   }
+
+  Widget buildQuantityField() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          textBaseline: TextBaseline.alphabetic,
+
+        )
+      ],
+    );
+  }
 }
