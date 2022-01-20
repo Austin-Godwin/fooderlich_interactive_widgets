@@ -318,7 +318,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
           onChanged: (double value) {
             setState(
               () {
-                // _currentSliderValue = value.toInt();
+                _currentSliderValue = value.toInt();
               },
             );
           },
