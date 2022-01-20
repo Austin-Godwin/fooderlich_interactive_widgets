@@ -322,6 +322,12 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
               },
             );
           },
+          activeColor: _currentColor,
+          inactiveColor: _currentColor.withOpacity(0.5),
+          min: 0.0,
+          max: 100.0,
+          divisions: 100,
+          label: _currentSliderValue.toInt().toString(),
         )
       ],
     );
