@@ -20,7 +20,7 @@ class GroceryTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100.0,
-      color: Colors.red,
+      // color: Colors.red,
     );
   }
 }
