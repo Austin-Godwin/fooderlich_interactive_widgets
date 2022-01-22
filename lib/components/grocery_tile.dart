@@ -50,7 +50,7 @@ class GroceryTile extends StatelessWidget {
                   const SizedBox(
                     height: 4.0,
                   ),
-                  // buildImportance()
+                  buildImportance()
                 ],
               ),
 
