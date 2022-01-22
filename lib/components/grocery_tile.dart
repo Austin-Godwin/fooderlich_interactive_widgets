@@ -5,7 +5,7 @@ import '../models/grocery_item.dart';
 
 class GroceryTile extends StatelessWidget {
   final GroceryItem item;
-  final Function(bool)? onComplete;
+  final Function(bool?)? onComplete;
   final TextDecoration textDecoration;
 
   GroceryTile({
@@ -18,9 +18,36 @@ class GroceryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 100.0,
-      color: Colors.red,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            width: 5.0,
+            color: item.color,
+          ),
+          const SizedBox(
+            width: 16.0,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                item.name,
+                style: GoogleFonts.lato(
+                    decoration: textDecoration,
+                    fontSize: 21.0,
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+          const SizedBox(height: 4.0,),
+          buildDate(),
+          const SizedBox(height: 4.0,),
+          buildImportance()
+        ],
+      ),
     );
   }
 
@@ -42,13 +69,30 @@ class GroceryTile extends StatelessWidget {
       return Text(
         'High',
         style: GoogleFonts.lato(
-          color: Colors.red,
-          fontWeight: FontWeight.w900,
-          decoration: textDecoration
-        ),
+            color: Colors.red,
+            fontWeight: FontWeight.w900,
+            decoration: textDecoration),
       );
     } else {
       throw Exception('This importance type does not exist');
     }
+  }
+
+  Widget buildDate() {
+    final dateFormatter = DateFormat('MMMM dd h:m a');
+    final dateString = dateFormatter.format(item.date);
+    return Text(
+      dateString,
+      style: TextStyle(
+        decoration: textDecoration,
+      ),
+    );
+  }
+
+  Widget buildCheckbox() {
+    return Checkbox(
+      value: item.isComplete,
+      onChanged: onComplete,
+    );
   }
 }
