@@ -9,7 +9,7 @@ class TabManager extends ChangeNotifier {
   }
 
   void goToRecipes() {
-    selectedTab = 0;
+    selectedTab = 1;
     notifyListeners();
   }
 }
