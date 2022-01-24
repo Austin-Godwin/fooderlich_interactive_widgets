@@ -14,6 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   static List<Widget> pages = <Widget>[
     ExploreScreen(),
     RecipesScreen(),
@@ -32,10 +33,7 @@ class _HomeState extends State<Home> {
               style: Theme.of(context).textTheme.headline6,
             ),
           ),
-          body: IndexedStack(
-            index: tabManger.selectedTab,
-            children: pages,
-          ),
+          body: pages[tabManger.selectedTab],
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor:
                 Theme.of(context).textSelectionTheme.selectionColor,
